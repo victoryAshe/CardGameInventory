@@ -83,10 +83,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Util\csvReader.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Container\DynamicArray.h" />
     <ClInclude Include="Container\CircleArray.h" />
+    <ClInclude Include="Util\csvReader.h" />
+    <ClInclude Include="Util\PathUtil.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
