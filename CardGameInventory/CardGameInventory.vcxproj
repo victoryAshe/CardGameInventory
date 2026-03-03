@@ -84,14 +84,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Card\CardArray.cpp" />
+    <ClCompile Include="Render\Renderer.cpp" />
     <ClCompile Include="Util\CsvReader.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Card\CardArray.h" />
     <ClInclude Include="Card\CardInfo.h" />
-    <ClInclude Include="Container\DynamicArray.h" />
     <ClInclude Include="Container\CircleArray.h" />
+    <ClInclude Include="Render\Renderer.h" />
     <ClInclude Include="Util\CsvReader.h" />
     <ClInclude Include="Util\PathUtil.h" />
   </ItemGroup>

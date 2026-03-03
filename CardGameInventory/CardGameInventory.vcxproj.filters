@@ -24,15 +24,15 @@
     <ClCompile Include="Util\CsvReader.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Render\Renderer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Container\CircleArray.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Util\PathUtil.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Container\DynamicArray.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Card\CardArray.h">
@@ -42,6 +42,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Card\CardInfo.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\Renderer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

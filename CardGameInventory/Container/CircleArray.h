@@ -30,8 +30,8 @@ public:
 		T* newBlock = new T[newCapacity];
 
 		// 2. Move
-		size_t count = std::min(size, newCapacity);
-		for (size_t i = 0; i < count; ++i)
+		int count = std::min(size, static_cast<int>(newCapacity));
+		for (int i = 0; i < count; ++i)
 		{
 			newBlock[i] = std::move(data[i]);
 		}
@@ -75,9 +75,16 @@ public:
 	// Array operator overloading.
 	T& operator[](int index)
 	{
-		if (index <size) return data[index];
-		else if (size!=0 && index > size) return data[index % size];
-		else return data[index + size];
+		// Exception Handling.
+		if (size == 0)
+		{
+			std::cerr << "CircleArray is empty: Out of bounds.\n";
+			__debugbreak();
+		}
+
+		index %= size;
+		if (index < 0) index += size;
+		return data[index];
 	}
 
 	// Functions for Range-based loop 
@@ -95,14 +102,14 @@ public:
 
 
 	// Getter.
-	size_t Size() const { return size; }
+	int Size() const { return size; }
 	size_t Capacity() const { return capacity; }
 
 private:
 	T* data = nullptr;
 
 	// the item count.
-	size_t size = 0;
+	int size = 0;
 
 	// the memory size of the array.
 	size_t capacity = 2;

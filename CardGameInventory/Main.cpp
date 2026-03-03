@@ -4,6 +4,7 @@
 #include "Util/PathUtil.h"
 
 #include "Util/CsvReader.h" // temporary
+#include "Render/Renderer.h"
 
 #include <iostream>
 
@@ -27,11 +28,14 @@ int main()
 		return 0;
 	}
 
-	for (const CardInfo& it : CardArray::info)
-	{
-		std::cout << it.id << " " << it.name.c_str() << " " << it.type <<" " << it.cost << " " << it.rarity << "\n";
-	}
 
+	//for (const CardInfo& it : CardArray::info)
+	//{
+	//	std::cout << it.id << " " << it.name.c_str() << " " << it.type <<" " << it.cost << " " << it.rarity << "\n";
+	//}
+
+	Renderer* renderer = new Renderer();
+	Renderer::Get().Submit(CardArray::GetInfo(-1));
 
 	return 0;
 }

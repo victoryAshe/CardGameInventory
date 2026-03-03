@@ -31,7 +31,7 @@ bool CardArray::LoadFromCSV(const std::string& path)
 		CardInfo curInfo;
 		curInfo.id = CsvReader::ToInt(fields[0]);
 		curInfo.name = CsvReader::UTF8toWide(fields[1]);
-		curInfo.type = cardTypeMap[fields[2]];
+		curInfo.type = cardTypeStringMap[fields[2]];
 		curInfo.cost = CsvReader::ToInt(fields[3]);
 		curInfo.rarity = CsvReader::ToInt(fields[4]);
 

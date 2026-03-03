@@ -12,13 +12,22 @@ enum eCardType
 	Support
 };
 
-static std::unordered_map<std::string, eCardType> cardTypeMap =
+static std::unordered_map<std::string, eCardType> cardTypeStringMap =
 {
 	{"", eCardType::None},
 	{"Spell", eCardType::Spell},
 	{"Unit", eCardType::Unit},
 	{"Artifact", eCardType::Artifact},
 	{"Support", eCardType::Support}
+};
+
+static std::unordered_map<eCardType, std::string> cardTypeEnumMap =
+{
+	{eCardType::None, ""},
+	{eCardType::Spell, "Spell"},
+	{eCardType::Unit, "Unit"},
+	{eCardType::Artifact, "Artifact"},
+	{eCardType::Support, "Support"}
 };
 
 struct CardInfo
