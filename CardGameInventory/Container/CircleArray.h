@@ -28,18 +28,20 @@ public:
 	{
 		// 1. allocate new memory space to move.
 		T* newBlock = new T[newCapacity];
-		memset(newBlock, 0, sizeof(T) * newCapacity);
 
-		// 2. Copy existing memory to the new memory space.
-		if (data)
+		// 2. Move
+		size_t count = std::min(size, newCapacity);
+		for (size_t i = 0; i < count; ++i)
 		{
-			memcpy(newBlock, data, sizeof(T) * capacity);
+			newBlock[i] = std::move(data[i]);
 		}
 
-		// 3. free existing array memory space.
+		// 3. Free memory.
 		delete[] data;
+
 		data = newBlock;
 		capacity = newCapacity;
+		size = count;
 	}
 
 	// Insert Value.
@@ -66,13 +68,15 @@ public:
 		}
 
 		// Move and Insert.
-		data[size++] = std::move(value);
+		data[size] = std::move(value);
+		++size;
 	}
 
 	// Array operator overloading.
 	T& operator[](int index)
 	{
-		if (index >= 0) return data[index % size];
+		if (index <size) return data[index];
+		else if (size!=0 && index > size) return data[index % size];
 		else return data[index + size];
 	}
 

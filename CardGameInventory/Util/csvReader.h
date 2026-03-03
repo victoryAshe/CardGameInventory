@@ -5,7 +5,7 @@
 #include <string>
 
 
-class csvReader
+class CsvReader
 {
 public:
 	static std::vector<std::string> ParseLine(const std::string& inLine);
@@ -16,8 +16,8 @@ public:
 	);
 
 	static int ToInt(const std::string& s);
-	static inline std::wstring UTF8toWide(const std::string& utf8);
-	
+	static std::wstring UTF8toWide(const std::string& utf8);
+
 private:
 	static void TrimCR(std::string& s);
 };
