@@ -4,7 +4,6 @@
 #include "CardInfo.h"
 
 #include <string>
-#include <unordered_map> // temporary
 #include <vector> 
 
 
@@ -16,6 +15,5 @@ public:
 
 public:
 	static CircleArray<CardInfo> info;
-	//static std::unordered_map<int, CardInfo> info;
 };
 

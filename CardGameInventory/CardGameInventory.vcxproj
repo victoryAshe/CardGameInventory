@@ -83,12 +83,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Core\CardGameInventory.cpp" />
     <ClCompile Include="Card\CardArray.cpp" />
     <ClCompile Include="Render\Renderer.cpp" />
     <ClCompile Include="Util\CsvReader.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Core\CardGameInventory.h" />
     <ClInclude Include="Card\CardArray.h" />
     <ClInclude Include="Card\CardInfo.h" />
     <ClInclude Include="Container\CircleArray.h" />

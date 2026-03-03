@@ -5,8 +5,6 @@
 
 CircleArray<CardInfo> CardArray::info = {};
 
-//std::unordered_map<int, CardInfo> CardArray::info;
-
 bool CardArray::LoadFromCSV(const std::string& path)
 {
 
