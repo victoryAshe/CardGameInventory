@@ -1,6 +1,4 @@
-
 #include "Core/CardGameInventory.h"
-
 
 int main()
 {

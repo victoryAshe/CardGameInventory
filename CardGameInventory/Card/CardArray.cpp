@@ -7,7 +7,6 @@ CircleArray<CardInfo> CardArray::info = {};
 
 bool CardArray::LoadFromCSV(const std::string& path)
 {
-
 	std::vector<std::vector<std::string>> rows;
 	if (!CsvReader::ReadAll(path, rows)) return false;
 
@@ -22,9 +21,8 @@ bool CardArray::LoadFromCSV(const std::string& path)
 			continue;
 		}
 
-		// stageName, npcName, dialogueStartID, dialogueEndID
 		// id, name, type, cost, rarity
-		//if (fields.size() < 5) continue;
+		if (fields.size() < 5) continue;
 
 		CardInfo curInfo;
 		curInfo.id = CsvReader::ToInt(fields[0]);
@@ -34,7 +32,6 @@ bool CardArray::LoadFromCSV(const std::string& path)
 		curInfo.rarity = CsvReader::ToInt(fields[4]);
 
 		info.Insert(curInfo);
-		//info[curInfo.id] = curInfo;
 	}
 
 	return true;

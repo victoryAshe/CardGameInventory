@@ -2,11 +2,8 @@
 
 #include <iostream>
 
-Renderer* Renderer::instance = nullptr;
-
 Renderer::Renderer()
 {
-    instance = this;
 }
 
 Renderer::~Renderer()
@@ -17,16 +14,6 @@ void Renderer::Submit(const CardInfo& info)
 {
     Clear();
     Render(info);
-}
-
-Renderer& Renderer::Get()
-{
-    if (!instance)
-    {
-        std::cerr << "Renderer - Failed to get renderer instance.\n";
-        __debugbreak();
-    }
-    return *instance;
 }
 
 void Renderer::Clear()

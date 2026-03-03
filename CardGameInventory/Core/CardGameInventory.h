@@ -11,7 +11,7 @@ public:
 
 	void Run();
 
-	const bool IsQuit() { return isQuit; }
+	const bool IsQuit() const { return isQuit; }
 	
 private:
 	const bool LoadData();

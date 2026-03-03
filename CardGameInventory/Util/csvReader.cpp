@@ -2,9 +2,8 @@
 
 #include <fstream>
 #include <vector>
-#include <Windows.h>
 
-#include <iostream> // temporary
+#include <Windows.h>
 
 std::vector<std::string> CsvReader::ParseLine(const std::string& inLine)
 {

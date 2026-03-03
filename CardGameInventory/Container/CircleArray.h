@@ -24,7 +24,7 @@ public:
 
 public:
 	// Reallocate the data memory.
-	void ReAllocate(size_t newCapacity)
+	void ReAllocate(int newCapacity)
 	{
 		// 1. allocate new memory space to move.
 		T* newBlock = new T[newCapacity];
@@ -103,7 +103,7 @@ public:
 
 	// Getter.
 	int Size() const { return size; }
-	size_t Capacity() const { return capacity; }
+	int Capacity() const { return capacity; }
 
 private:
 	T* data = nullptr;
@@ -112,6 +112,6 @@ private:
 	int size = 0;
 
 	// the memory size of the array.
-	size_t capacity = 2;
+	int capacity = 2;
 };
 
